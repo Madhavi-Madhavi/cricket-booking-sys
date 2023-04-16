@@ -1,0 +1,82 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Education</th>
+            <th scope="col">percentage</th>
+            <th scope="col">college Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>SSC</td>
+            <td>70%</td>
+            <td>SPCE</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Inter</td>
+            <td>85%</td>
+            <td>Sasi</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>PG</td>
+            <td>85%</td>
+            <td>Btech</td>
+        </tr>
+    </tbody>
+
+</table>
+<div class="row">
+    <div class="col-sm-4">
+        <button class="btn btn-warning" id="add_details">Add Details</button>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <button class="btn btn-info" id="next_id">Next 
+        </button>
+    </div><!-- comment -->
+</div>
+<div class="row" id="educational_details">
+    <h2>Add Education details</h2>
+    <form action="#">
+        <p><input type="text" class="form-control" placeholder="Add College"></p>
+        <p> <input type="text" class="form-control" placeholder="Percentage"></p>
+        <select class="form-control">
+            <option value="">Select college</option>
+            <option value="10th">10</option>
+            <option value="intr">inter</option>
+            <option value="bteck">Bteck</option>
+        </select>
+    </form>
+    <button class="btn btn-primary" id="add_button">Add</button>
+</div>
+<div class="alert alert-primary alert" role="alert">
+    Educationl details has been saved sucessfully 
+</div>
+<script>
+    $(document).ready(function () {
+        $('#educational_details').hide();
+        $('.alert').hide();
+    });
+    $('#add_details').on('click', function (response) {
+        $('#educational_details').show();
+    });
+    $('#add_button').on('click', function (response) {
+        $('#educational_details').hide();
+        $('.alert').show();
+    });
+
+    $('#next_id').on('click', function (response) {
+        $.post("addproject.html", function (data) {
+            $("#cart-body-id").empty();
+            $("#cart-body-id").html(data);
+        });
+    });
+</script>

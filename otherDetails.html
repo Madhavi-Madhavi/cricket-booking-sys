@@ -1,0 +1,37 @@
+<p class="card-title text-center" style="padding: 0.7em;">Upload your photos</p>
+<p class="card-text">
+<div class="row">
+    <div class="col-sm-6"><img src="..." class="img-fluid img-thumbnail" alt="..."></div>
+    <div class="col-sm-6"><img src="..." class="img-fluid img-thumbnail" alt="..."></div>
+</div>
+<div class="row">
+    <div class="col-sm-6"><img src="..." class="img-fluid img-thumbnail" alt="..."></div>
+    <div class="col-sm-6"><img src="..." class="img-fluid img-thumbnail" alt="..."></div>
+</div>
+<div style="padding-left: 10em;padding-top: 2em">
+    <a href="#" class="btn btn-lg btn-default text-center" id="back_to_personal" >Back</a>
+</div>
+<div style="padding-left: 6em; padding-top:  2em">
+    <a href="#" class="btn btn-lg text-center next_to_profile" id="Button_align_id">Next</a>
+</div>
+
+<script>
+            $('#back_to_personal').on('click', function (response) {
+              
+               $.post("personal.html", function (data) {
+                    $(".container").empty();
+                    $(".container").html(data);
+                });
+
+            });
+             $('.next_to_profile').on('click', function (response) {
+              
+               $.post("project.html", function (data) {
+                    $("#cart-body-id").empty();
+                    $("#cart-body-id").html(data);
+                });
+
+            });
+            
+        </script>
+

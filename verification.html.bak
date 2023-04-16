@@ -1,0 +1,23 @@
+<p class="card-title text-center" style="padding: 0.7em;">OTP has been sent successfully to +91-99******88
+
+    Please enter the same OTP below.</p>
+<p class="card-text">
+<div class="d-flex"><input type="text" class="form-control" autofocus=""><input type="text" class="form-control"><input type="text" class="form-control"><input type="text" class="form-control"></div></p>
+<div style="padding-left: 10em;">
+    <a href="#" class="btn text-center" id="Button_align_id">VERIFY OTP</a>
+</div>
+<div class="text-center"><span class="d-block mobile-text">Don't receive the code?</span><span class="font-weight-bold text-danger cursor">Resend</span></div>
+<div class="text-center"><span class="d-block mobile-text">Already user?</span><a href="#" class="font-weight-bold">SignIn Now</a></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+
+			 $('#Button_align_id').on('click', function (response) {
+              alert("123");
+               $.post("personal.html", function (data) {
+                    $("#cart-body-id").empty();
+                    $("#cart-body-id").html(data);
+                });
+
+            });
+</script>
